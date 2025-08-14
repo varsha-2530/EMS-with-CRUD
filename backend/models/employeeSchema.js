@@ -10,6 +10,7 @@ const  employeeSchema = new Schema({
     Email:{
         type:String,
         required:true,
+        lowercase:true
         
     },
     Phone:{
