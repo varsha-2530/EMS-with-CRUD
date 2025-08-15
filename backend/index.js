@@ -7,10 +7,15 @@ import employeeRoutes from "./routes/EmployeeRoutes.js";
 const app = express();
 
 app.use(cors({
-  origin: "http://localhost:5173", 
+  origin: [
+    "http://localhost:5173", // local dev
+    "https://your-frontend-url.onrender.com" // deployed frontend
+  ],
   methods: ["GET", "POST", "PUT", "DELETE"],
-  
 }));
+
+
+
 app.use(express.json());
 
 // Connect MongoDB
