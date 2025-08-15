@@ -3,7 +3,7 @@ import Employee from "../models/employeeSchema.js";
 export const UpdateEmp = async (req, res) => {
   try {
     const { id } = req.params;
-    const { Phone } = req.body;
+    const { phone } = req.body;
 
     const employee = await Employee.findById(id);
     if (!employee) {
@@ -12,9 +12,9 @@ export const UpdateEmp = async (req, res) => {
       });
     }
 
-    if (Phone) {
+    if (phone) {
       const existingEmployee = await Employee.findOne({
-        Phone,
+        phone,
         _id: { $ne: id },
       });
       if (existingEmployee) {

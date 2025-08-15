@@ -6,7 +6,11 @@ import employeeRoutes from "./routes/EmployeeRoutes.js";
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: "http://localhost:5173", 
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  
+}));
 app.use(express.json());
 
 // Connect MongoDB

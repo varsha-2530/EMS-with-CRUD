@@ -2,9 +2,9 @@ import Employee from "../models/employeeSchema.js";
 
 export const AddEmploye = async (req, res) => {
   try {
-    const { Phone } = req.body;
+    const { phone } = req.body;
 
-    const existingEmployee = await Employee.findOne({ Phone });
+    const existingEmployee = await Employee.findOne({ phone });
     if (existingEmployee) {
       return res.status(400).json({
         message: "This phone number is already registered.",
@@ -15,11 +15,14 @@ export const AddEmploye = async (req, res) => {
     console.log(employee);
 
     await employee.save();
-    res.status(200).json(employee, { message: "Employee added successfully." });
+    res.status(200).json({
+      message: "Employee added successfully.",
+      employee
+    });
   } catch (error) {
     res.status(400).json({
       message: "Not Add Successfully",
-      err,
+      error,
     });
   }
 };
