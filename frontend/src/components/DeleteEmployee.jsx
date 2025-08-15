@@ -10,7 +10,7 @@ const DeleteEmployee = () => {
   // Fetch employees from backend
   const fetchEmployees = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/getAllData");
+      const response = await fetch("/api/getAllData");
       const data = await response.json();
       if (response.ok) {
         setEmployees(data.showEmp);
@@ -33,7 +33,7 @@ const DeleteEmployee = () => {
   const handleDelete = async (id) => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/deleteEmp/${id}`,
+        `/api/deleteEmp/${id}`,
         { method: "DELETE" }
       );
       const data = await response.json();

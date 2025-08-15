@@ -16,7 +16,7 @@ const EditEmployee = () => {
   // Fetch employee data to edit
   const fetchEmployee = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/api/getAllData`);
+      const response = await fetch(`/api/getAllData`);
       const data = await response.json();
 
       if (response.ok) {
@@ -60,7 +60,7 @@ const EditEmployee = () => {
     }
 
     try {
-      const response = await fetch(`http://localhost:5000/api/UpdateEmp/${id}`, {
+      const response = await fetch(`/api/UpdateEmp/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
