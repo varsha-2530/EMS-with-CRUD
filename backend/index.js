@@ -6,15 +6,15 @@ import employeeRoutes from "./routes/EmployeeRoutes.js";
 
 const app = express();
 
+// ✅ CORS setup for local and deployed frontend
 app.use(cors({
   origin: [
-    "http://localhost:5173", // local dev
-    "https://your-frontend-url.onrender.com" // deployed frontend
+    "http://localhost:5173",           // Local frontend
+    "https://ems-with-crud.onrender.com" // Deployed frontend
   ],
   methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true, // optional, only if you use cookies/auth
 }));
-
-
 
 app.use(express.json());
 
@@ -28,11 +28,10 @@ app.get("/api/health", (req, res) => {
   res.send("Server is running Okay!");
 });
 
-
+// Employee routes
 app.use("/api", employeeRoutes); 
 
+// Start server
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port http://localhost:${PORT}`);
 });
-
-
