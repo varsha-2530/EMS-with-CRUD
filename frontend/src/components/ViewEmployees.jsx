@@ -11,7 +11,7 @@ const ViewEmployees = () => {
   // Fetch employees from backend
   const fetchEmployees = async () => {
     try {
-      const response = await fetch("https://ems-backend.onrender.com/api/getAllData");
+      const response = await fetch("https://ems-with-crud-1.onrender.com/api/getAllData");
       const data = await response.json();
       if (response.ok) {
         setEmployees(data.showEmp);
@@ -34,7 +34,7 @@ const ViewEmployees = () => {
   const handleDelete = async (id) => {
     try {
       const response = await fetch(
-        `https://ems-backend.onrender.com/api/deleteEmp/${id}`,
+        `https://ems-with-crud-1.onrender.com/api/deleteEmp/${id}`,
         { method: "DELETE" }
       );
       const data = await response.json();
