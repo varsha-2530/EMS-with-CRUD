@@ -16,7 +16,7 @@ const EditEmployee = () => {
   // Fetch employee data to edit
   const fetchEmployee = async () => {
     try {
-      const response = await fetch(`https://your-backend-url.onrender.com/api/getAllData`);
+      const response = await fetch(`https://ems-backend.onrender.com/api/getAllData`);
       const data = await response.json();
 
       if (response.ok) {
@@ -60,7 +60,7 @@ const EditEmployee = () => {
     }
 
     try {
-      const response = await fetch(`https://your-backend-url.onrender.com/api/UpdateEmp/${id}`, {
+      const response = await fetch(`https://ems-backend.onrender.com/api/UpdateEmp/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),

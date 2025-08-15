@@ -23,7 +23,7 @@ const AddEmployee = () => {
     }
 
     try {
-      const response = await fetch("https://your-backend-url.onrender.com/api/AddEmploye", {
+      const response = await fetch("https://ems-backend.onrender.com/api/AddEmploye", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
