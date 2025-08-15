@@ -11,7 +11,7 @@ const ViewEmployees = () => {
   // Fetch employees from backend
   const fetchEmployees = async () => {
     try {
-      const response = await fetch("/api/getAllData");
+      const response = await fetch("https://your-backend-url.onrender.com/api/getAllData");
       const data = await response.json();
       if (response.ok) {
         setEmployees(data.showEmp);
@@ -34,7 +34,7 @@ const ViewEmployees = () => {
   const handleDelete = async (id) => {
     try {
       const response = await fetch(
-        `/api/deleteEmp/${id}`,
+        `https://your-backend-url.onrender.com/api/deleteEmp/${id}`,
         { method: "DELETE" }
       );
       const data = await response.json();
@@ -183,3 +183,5 @@ const ViewEmployees = () => {
 };
 
 export default ViewEmployees;
+
+
